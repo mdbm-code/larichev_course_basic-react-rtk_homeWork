@@ -9,6 +9,7 @@
   background: var(--primary-400, #7b6ef6);
   border: none;
   color: #fff;
+  height: 64px;
 
   font-size: 16px;
   font-style: normal;
