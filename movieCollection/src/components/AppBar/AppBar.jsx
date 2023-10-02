@@ -8,9 +8,7 @@ const AppBar = () => {
         <div className="logo">
           <img src="/logo.svg" alt="logo" />
         </div>
-        <div className="app-bar-menu">
-          <Menu />
-        </div>
+        <Menu />
       </div>
     </div>
   );

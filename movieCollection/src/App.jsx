@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import './App.css';
-import Header from './components/Header/Header';
+
 import Paragraph from './components/Paragraph/Paragraph';
 import InputBox from './components/InputBox/InputBox';
 import AppBar from './components/AppBar/AppBar';
 import CalalogList from './components/CalalogList/CalalogList';
+import HTag from './components/HTag/HTag';
 
 const INITIAL_STATE = [
   {
@@ -82,7 +83,7 @@ const App = () => {
     <div className="app">
       <AppBar />
       <div className="header-section">
-        <Header text="Поиск" />
+        <HTag text="Поиск" />
         <Paragraph>
           Введите название фильма, сериала или мультфильма для поиска и
           добавления в избранное.

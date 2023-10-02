@@ -1,19 +1,21 @@
 import Badge from '../Badge/Badge';
+import classNames from 'classnames';
 import './MenuItem.css';
 
 const MenuItem = ({ count, onClick, text, className, icon }) => {
-  const cl = `menu-item ${count && ' menu-item-with-badge'}${
-    className && ' ' + className
-  }`;
+  var liClass = classNames('menu-item', {
+    'menu-item-with-badge': count,
+    [className]: className
+  });
+
   return (
-    <a className="menu-link" href="#">
-      {/* Пока не известно как именно будем реагировать на клик на профиль. Выпадающее меню или переход */}
-      <div className={cl} onClick={onClick}>
+    <li className={liClass} onClick={onClick}>
+      <a href="#">
         {text}
         {count && <Badge value={count} />}
         {icon && <img src={icon} alt="icon" />}
-      </div>
-    </a>
+      </a>
+    </li>
   );
 };
 
