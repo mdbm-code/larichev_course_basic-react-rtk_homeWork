@@ -2,9 +2,10 @@
   width: 24px;
   height: 24px;
   flex-shrink: 0;
+}
 
-  color: #fff;
-
+.badge-text {
+  fill: #fff;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;

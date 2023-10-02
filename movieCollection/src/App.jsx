@@ -13,23 +13,21 @@ const App = () => {
 
   return (
     <div className="app">
-      <span className="secondBg">
-        <AppBar />
-        <div className="header-section">
-          <Header text="Поиск" />
-          <Paragraph>
-            Введите название фильма, сериала или мультфильма для поиска и
-            добавления в избранное.
-          </Paragraph>
-          <InputBox
-            value={inputValue}
-            setValue={setInputValue}
-            icon="/search-normal.svg"
-            text="Искать"
-            onClick={handleClickButton}
-          />
-        </div>
-      </span>
+      <AppBar />
+      <div className="header-section">
+        <Header text="Поиск" />
+        <Paragraph>
+          Введите название фильма, сериала или мультфильма для поиска и
+          добавления в избранное.
+        </Paragraph>
+        <InputBox
+          value={inputValue}
+          setValue={setInputValue}
+          icon="/search-normal.svg"
+          text="Искать"
+          onClick={handleClickButton}
+        />
+      </div>
     </div>
   );
 };

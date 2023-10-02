@@ -16,9 +16,3 @@
   height: 40px;
   flex-shrink: 0;
 }
-
-.menu-list {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-}

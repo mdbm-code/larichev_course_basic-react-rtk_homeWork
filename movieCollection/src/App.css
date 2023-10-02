@@ -2,24 +2,31 @@
   max-width: 1280px;
   margin: 0 auto;
   text-align: start;
-  /* background-image: url(/ellipse.svg);
-  background-position: right;
+  height: 100vh;
+}
+
+body {
+  background-image: url(/bgtl.svg);
+  background-position: bottom -400px left;
   background-repeat: no-repeat;
   background-size: cover;
-  background-size: 80%;
-  height: 100vh; */
 }
 
 .app {
   padding: 0 120px;
-  background-image: url(/bg1.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
 }
 
-.secondBg {
+#bg {
+  background-image: url(/bgtr.svg);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#bg2 {
+  background-image: url(/bgbr.svg);
+  background-position: top 200px right;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header-section {

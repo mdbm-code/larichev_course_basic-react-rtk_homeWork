@@ -12,12 +12,13 @@ const Badge = ({ value }) => {
       >
         <circle cx="12" cy="12" r="12" fill="#7B6EF6" />
         <text
+          className="badge-text"
           x="50%"
           y="50%"
           textAnchor="middle"
-          stroke="#FFF"
-          strokeWidth="1px"
-          dy=".3em"
+          //stroke="#FFF"
+          //strokeWidth="1px"
+          dy=".35em"
         >
           {value}
         </text>
