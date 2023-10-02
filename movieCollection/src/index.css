@@ -1,6 +1,5 @@
 :root {
   font-family: Montserrat, sans-serif;
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
   font-weight: 400;
 
@@ -8,7 +7,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #0f0d25; /*Primary*/
   /*background-color: #492c66; /*Tertary*/
-  /* background-color: #0c4265; /*Secondary*/
+  /*background-color: #0c4265; /*Secondary*/
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

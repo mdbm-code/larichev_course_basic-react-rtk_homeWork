@@ -1,13 +1,14 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
+  max-width: 1440px;
   margin: 0 auto;
   text-align: start;
-  height: 100vh;
+  padding-bottom: 58px;
 }
 
 body {
   background-image: url(/bgtl.svg);
-  background-position: bottom -400px left;
+  background-position: bottom -10px left;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -24,11 +25,15 @@ body {
 }
 #bg2 {
   background-image: url(/bgbr.svg);
-  background-position: top 200px right;
+  background-position: top 600px right;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .header-section {
   width: 588px;
+}
+
+.content-section {
+  margin-top: 80px;
 }
