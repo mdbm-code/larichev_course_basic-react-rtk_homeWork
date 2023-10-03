@@ -1,12 +1,12 @@
 import MenuItem from '../MenuItem/MenuItem';
 import './Menu.css';
 
-const Menu = () => {
+const Menu = ({ children }) => {
   return (
     <ul className="menu-list">
-      <MenuItem text="Поиск фильмов" />
-      <MenuItem text="Мои фильмы" count={53} />
-      <MenuItem className="profile" text="Войти" icon="/login.svg" />
+      {children.map((item) => (
+        <MenuItem key={item.id} {...item} />
+      ))}
     </ul>
   );
 };
