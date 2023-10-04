@@ -1,4 +1,4 @@
-.menu-item a {
+.menu-item {
   text-decoration: none;
   display: flex;
   flex-direction: row;
@@ -17,10 +17,10 @@
   border-radius: 12px;
 }
 
-.menu-item a:hover {
+.menu-item :hover {
   background-color: #251e62;
 }
 
-.profile a {
+.profile {
   padding: 12px 32px;
 }

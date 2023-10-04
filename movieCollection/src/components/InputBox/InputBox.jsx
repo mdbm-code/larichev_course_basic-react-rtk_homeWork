@@ -1,6 +1,6 @@
 import Button from '../Button/Button';
 import Input from '../Input/Input';
-import './InputBox.css';
+import styles from './InputBox.module.css';
 
 const InputBox = ({
   inputValue,
@@ -11,7 +11,7 @@ const InputBox = ({
   placeholder = 'Введите название'
 }) => {
   return (
-    <div className="input-box">
+    <div className={styles['input-box']}>
       <Input
         value={inputValue}
         setValue={setValue}

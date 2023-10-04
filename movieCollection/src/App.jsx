@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+import styles from './App.module.css';
 
 import Paragraph from './components/Paragraph/Paragraph';
 import InputBox from './components/InputBox/InputBox';
@@ -80,9 +80,9 @@ const App = () => {
   };
 
   return (
-    <div className="app">
+    <div className={styles['app']}>
       <AppBar />
-      <div className="header-section">
+      <div className={styles['header-section']}>
         <HTag text="Поиск" />
         <Paragraph>
           Введите название фильма, сериала или мультфильма для поиска и
@@ -96,7 +96,7 @@ const App = () => {
           onClick={handleClickButton}
         />
       </div>
-      <div className="content-section">
+      <div className={styles['content-section']}>
         <CalalogList data={data} toggleFavorite={toggleFavorite} />
       </div>
     </div>

@@ -1,5 +1,5 @@
 import Menu from '../Menu/Menu';
-import './AppBar.css';
+import styles from './AppBar.module.css';
 
 const AppBar = () => {
   const minuItems = [
@@ -9,9 +9,9 @@ const AppBar = () => {
   ];
 
   return (
-    <div className="app-bar">
-      <div className="app-bar-inner">
-        <div className="logo">
+    <div className={styles['app-bar']}>
+      <div className={styles['app-bar-inner']}>
+        <div className={styles['logo']}>
           <img src="/logo.svg" alt="logo" />
         </div>
         <Menu>{minuItems}</Menu>
