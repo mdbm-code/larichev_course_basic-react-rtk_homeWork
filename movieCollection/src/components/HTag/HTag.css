@@ -1,0 +1,10 @@
+.ui-header {
+  color: #ebeef5;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 80px; /* 125% */
+  letter-spacing: -1.28px;
+  margin-bottom: 16px;
+  width: 588px;
+}

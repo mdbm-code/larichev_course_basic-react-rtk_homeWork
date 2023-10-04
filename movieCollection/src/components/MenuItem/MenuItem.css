@@ -1,0 +1,26 @@
+.menu-item a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  padding: 12px 16px;
+  align-items: center;
+
+  gap: 8px;
+  color: #a8aebf;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.32px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.menu-item a:hover {
+  background-color: #251e62;
+}
+
+.profile a {
+  padding: 12px 32px;
+}

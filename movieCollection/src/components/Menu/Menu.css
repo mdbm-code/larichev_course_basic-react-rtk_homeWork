@@ -1,0 +1,6 @@
+.menu-list {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  height: 48px;
+}

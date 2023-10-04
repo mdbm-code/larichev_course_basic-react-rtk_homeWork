@@ -1,0 +1,36 @@
+.input-wrapper {
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  gap: 16px;
+  flex: 1 0 0;
+
+  width: 384px;
+  border-radius: 12px;
+  border: 1px solid var(--grey-700, #323b54);
+}
+
+.input {
+  height: 38px;
+  width: 100%;
+  background: var(--black-10, transparent);
+  border: none;
+  color: #475069;
+  /* Caption */
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 114.286% */
+}
+
+.input:focus {
+  border: none;
+  outline-width: 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
