@@ -1,11 +1,12 @@
+import { forwardRef } from 'react';
 import styles from './Button.module.css';
 
-const Button = ({ text, onClick }) => {
+const Button = forwardRef(function Button({ text, onClick }, ref) {
   return (
-    <button className={styles['ui-btn']} onClick={onClick}>
+    <button ref={ref} className={styles['ui-btn']} onClick={onClick}>
       {text}
     </button>
   );
-};
+});
 
 export default Button;

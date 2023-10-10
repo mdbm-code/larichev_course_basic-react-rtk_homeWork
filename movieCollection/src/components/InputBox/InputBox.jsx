@@ -1,26 +1,32 @@
+import { forwardRef } from 'react';
 import Button from '../Button/Button';
-import Input from '../Input/Input';
 import styles from './InputBox.module.css';
 
-const InputBox = ({
-  inputValue,
-  setValue,
-  icon,
-  text,
-  onClick,
-  placeholder = 'Введите название'
-}) => {
+const InputBox = forwardRef(function InputBox(
+  { hideInput, icon, buttonText, onClick = () => {}, ...props },
+  ref
+) {
   return (
     <div className={styles['input-box']}>
-      <Input
-        value={inputValue}
-        setValue={setValue}
-        icon={icon}
-        placeholder={placeholder}
-      />
-      <Button text={text} onClick={onClick} />
+      {!hideInput && (
+        <div className={styles['input-wrapper']}>
+          {icon && <img className={styles['icon']} src={icon} alt="icon" />}
+          <input
+            {...props}
+            ref={ref?.inputRef ? ref.inputRef : null}
+            className={styles['input']}
+          />
+        </div>
+      )}
+      {buttonText && (
+        <Button
+          text={buttonText}
+          onClick={onClick}
+          ref={ref?.buttonRef ? ref.buttonRef : null}
+        />
+      )}
     </div>
   );
-};
+});
 
 export default InputBox;

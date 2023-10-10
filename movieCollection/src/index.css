@@ -59,3 +59,21 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.app {
+  padding: 0 120px;
+}
+
+.header-section {
+  width: 588px;
+}
+
+.content-section {
+  margin-top: 80px;
+}
+
+.menu-item {
+  cursor: pointer;
+}
+.menu-item:hover {
+  background-color: #251e62;
+}

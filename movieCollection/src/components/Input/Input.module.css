@@ -3,11 +3,12 @@
   padding: 12px 16px;
   align-items: center;
   gap: 16px;
-  flex: 1 0 0;
+  /*flex: 1 0 0;*/
 
-  width: 384px;
+  flex-basis: 350px;
   border-radius: 12px;
   border: 1px solid var(--grey-700, #323b54);
+  margin-bottom: 27px;
 }
 
 .input {
