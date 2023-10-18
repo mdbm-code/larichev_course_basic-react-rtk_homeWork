@@ -1,43 +1,20 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Menu from '../Menu/Menu';
 import styles from './AppBar.module.css';
-import { UserContext } from '../../context/user.context';
+import { AppContext } from '../../context/app.context';
 
 const AppBar = () => {
-  const { currentUserName, users, logout, setFocusLoginInput } =
-    useContext(UserContext);
+  const { menuUpdated, getMenu } = useContext(AppContext);
+  const [menu, setMenu] = useState([]);
 
-  let currentUser = undefined;
-  if (currentUserName && users) {
-    //здесь нужен объект текущего пользователя
-    //для того чтобы получить список его избранного
-    currentUser = users.find((user) => user.name === currentUserName);
-  }
-
-  //генерируем пункты меню
-  let minuItems = [{ id: 1, text: 'Поиск фильмов' }];
-  if (currentUser) {
-    //если есть авторизованный пользователь
-    minuItems.push({
-      id: 2,
-      text: 'Мои фильмы',
-      count: currentUser?.favorites.length
-    });
-    minuItems.push({ id: 3, text: currentUser.name, icon: '/user.svg' });
-    minuItems.push({
-      id: 4,
-      text: 'Выйти',
-      onClick: () => logout()
-    });
-  } else {
-    minuItems.push({
-      id: 5,
-      className: 'profile',
-      text: 'Войти',
-      icon: '/login.svg',
-      onClick: () => setFocusLoginInput(true)
-    });
-  }
+  //menuUpdated - булевый флаг, который переводится в состояние true в случае:
+  //1. Выход пользователя
+  //2. Вход пользователя
+  //3. Пользователь добавил фильм в избранное
+  //4. Пользователь убрал фильм из избранного
+  useEffect(() => {
+    setMenu(getMenu());
+  }, [menuUpdated, setMenu, getMenu]);
 
   return (
     <div className={styles['app-bar']}>
@@ -45,7 +22,7 @@ const AppBar = () => {
         <div className={styles['logo']}>
           <img src="/logo.svg" alt="logo" />
         </div>
-        <Menu>{minuItems}</Menu>
+        <Menu>{menu}</Menu>
       </div>
     </div>
   );

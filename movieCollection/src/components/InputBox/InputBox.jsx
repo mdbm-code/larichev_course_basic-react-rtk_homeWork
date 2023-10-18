@@ -4,7 +4,7 @@ import styles from './InputBox.module.css';
 
 const InputBox = forwardRef(function InputBox(
   { hideInput, icon, buttonText, onClick = () => {}, ...props },
-  ref
+  refs
 ) {
   return (
     <div className={styles['input-box']}>
@@ -13,7 +13,7 @@ const InputBox = forwardRef(function InputBox(
           {icon && <img className={styles['icon']} src={icon} alt="icon" />}
           <input
             {...props}
-            ref={ref?.inputRef ? ref.inputRef : null}
+            ref={(element) => (refs.current['inp'] = element)}
             className={styles['input']}
           />
         </div>
@@ -22,7 +22,7 @@ const InputBox = forwardRef(function InputBox(
         <Button
           text={buttonText}
           onClick={onClick}
-          ref={ref?.buttonRef ? ref.buttonRef : null}
+          ref={(element) => (refs.current['btn'] = element)}
         />
       )}
     </div>

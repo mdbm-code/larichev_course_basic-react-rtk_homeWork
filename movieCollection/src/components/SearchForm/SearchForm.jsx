@@ -6,22 +6,16 @@ import Paragraph from '../Paragraph/Paragraph';
 const SearchForm = () => {
   const [inputValue, setInputValue] = useState('');
 
-  const inputRef = useRef();
-  const buttonRef = useRef();
-  //тренировка передачи в дочерний компонент одновременно двух рефов
-  const refsObject = {
-    inputRef,
-    buttonRef
-  };
+  const inputRefs = useRef({});
 
   const inputOnChange = (e) => {
     setInputValue(e.target.value);
   };
 
-  const handleClickButton = () => {
-    console.log('search', inputValue);
+  const handleClickButton = (key) => {
+    console.log('key', key);
     //тестовая установка фокуса
-    inputRef.current.focus();
+    inputRefs.current[key].focus();
   };
 
   return (
@@ -32,7 +26,7 @@ const SearchForm = () => {
         в избранное.
       </Paragraph>
       <InputBox
-        ref={refsObject}
+        ref={inputRefs}
         value={inputValue}
         onChange={inputOnChange}
         icon="/search-normal.svg"

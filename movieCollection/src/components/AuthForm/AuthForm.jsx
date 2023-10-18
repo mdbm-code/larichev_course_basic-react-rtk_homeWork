@@ -1,22 +1,14 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import HTag from '../HTag/HTag';
 import InputBox from '../InputBox/InputBox';
 import Paragraph from '../Paragraph/Paragraph';
-import { UserContext } from '../../context/user.context';
+import { AppContext } from '../../context/app.context';
 
 const AuthForm = () => {
   const [inputValue, setInputValue] = useState('');
-  const { currentUserName, login, logout, focusLoginInput } =
-    useContext(UserContext);
+  const { userName, login, logout } = useContext(AppContext);
 
-  const inputRef = useRef();
-
-  useEffect(() => {
-    //при нажатии в меню шапки кнопки Войти значение focusLoginInput === true
-    if (focusLoginInput) {
-      inputRef.current?.focus();
-    }
-  }, [focusLoginInput, inputRef]);
+  const inputRefs = useRef({});
 
   const inputOnChange = (e) => {
     setInputValue(e.target.value);
@@ -36,16 +28,16 @@ const AuthForm = () => {
 
   return (
     <div className="header-section">
-      <HTag text={currentUserName ? currentUserName : 'Вход'} />
+      <HTag text={userName ? userName : 'Вход'} />
       <Paragraph></Paragraph>
       <InputBox
         value={inputValue}
         onChange={inputOnChange}
-        buttonText={currentUserName ? 'Выйти' : 'Войти в профиль'}
-        onClick={currentUserName ? handleLogout : handleLogin}
+        buttonText={userName ? 'Выйти' : 'Войти в профиль'}
+        onClick={userName ? handleLogout : handleLogin}
         placeholder="Ваше имя"
-        ref={{ inputRef }}
-        hideInput={currentUserName ? true : false}
+        ref={inputRefs}
+        hideInput={userName ? true : false}
       />
     </div>
   );
