@@ -7,7 +7,7 @@ export const AppContextProvider = ({ children }) => {
   const [users, dispatchUser] = useReducer(usersReducer, USERS_INITIAL_STATE);
   const [menuUpdated, setMenuUpdated] = useState(false);
 
-  //храню в стейте имя пользователя потому что в этом проекте оно является идентификатором
+  //храню в стейте имя пользователя вместо ID, потому что в этом проекте уникальным идентификатором является имя
   const [userName, setCurrentUserName] = useState('');
 
   const getMenu = () => {
@@ -36,7 +36,7 @@ export const AppContextProvider = ({ children }) => {
         icon: '/login.svg'
       });
     }
-
+    setMenuUpdated(false);
     return minuItems;
   };
 

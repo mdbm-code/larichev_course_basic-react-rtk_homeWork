@@ -1,4 +1,4 @@
-import CatalogItem from '../CatalogItem/CatalogItem';
+import CatalogItem from '../CatalogItem/';
 import styles from './CalalogList.module.css';
 
 const CalalogList = ({ data, toggleFavorite }) => {

@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
-import HTag from '../HTag/HTag';
-import InputBox from '../InputBox/InputBox';
-import Paragraph from '../Paragraph/Paragraph';
+import HTag from '../HTag/';
+import InputBox from '../InputBox/';
+import Paragraph from '../Paragraph/';
 
 const SearchForm = () => {
   const [inputValue, setInputValue] = useState('');
@@ -12,10 +12,9 @@ const SearchForm = () => {
     setInputValue(e.target.value);
   };
 
-  const handleClickButton = (key) => {
-    console.log('key', key);
+  const handleClickButton = () => {
     //тестовая установка фокуса
-    inputRefs.current[key].focus();
+    //inputRefs.current['search'].focus();
   };
 
   return (
@@ -26,6 +25,7 @@ const SearchForm = () => {
         в избранное.
       </Paragraph>
       <InputBox
+        name="search"
         ref={inputRefs}
         value={inputValue}
         onChange={inputOnChange}

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import Menu from '../Menu/Menu';
+import Menu from '../Menu/';
 import styles from './AppBar.module.css';
 import { AppContext } from '../../context/app.context';
 
@@ -13,8 +13,10 @@ const AppBar = () => {
   //3. Пользователь добавил фильм в избранное
   //4. Пользователь убрал фильм из избранного
   useEffect(() => {
-    setMenu(getMenu());
-  }, [menuUpdated, setMenu, getMenu]);
+    if (menuUpdated) {
+      setMenu(getMenu());
+    }
+  }, [menuUpdated, getMenu]);
 
   return (
     <div className={styles['app-bar']}>

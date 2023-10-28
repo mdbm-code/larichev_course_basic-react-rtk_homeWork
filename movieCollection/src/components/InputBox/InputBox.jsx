@@ -13,16 +13,17 @@ const InputBox = forwardRef(function InputBox(
           {icon && <img className={styles['icon']} src={icon} alt="icon" />}
           <input
             {...props}
-            ref={(element) => (refs.current['inp'] = element)}
+            ref={(el) => (refs.current[el?.name] = el)}
             className={styles['input']}
           />
         </div>
       )}
       {buttonText && (
         <Button
+          name="btn"
           text={buttonText}
           onClick={onClick}
-          ref={(element) => (refs.current['btn'] = element)}
+          ref={(el) => (refs.current[el?.name] = el)}
         />
       )}
     </div>

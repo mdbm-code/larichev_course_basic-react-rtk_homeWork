@@ -1,12 +1,15 @@
-import { useContext, useRef, useState } from 'react';
-import HTag from '../HTag/HTag';
-import InputBox from '../InputBox/InputBox';
-import Paragraph from '../Paragraph/Paragraph';
-import { AppContext } from '../../context/app.context';
+import { useRef, useState } from 'react';
+//import { useContext } from 'react';
+import HTag from '../HTag/';
+import InputBox from '../InputBox/';
+import Paragraph from '../Paragraph/';
+//import { AppContext } from '../../context/app.context';
+import { useLogin } from '../../hooks/useLogin.hook';
 
 const AuthForm = () => {
   const [inputValue, setInputValue] = useState('');
-  const { userName, login, logout } = useContext(AppContext);
+  //const { userName, login, logout } = useContext(AppContext);
+  const [userName, setUser] = useLogin();
 
   const inputRefs = useRef({});
 
@@ -16,28 +19,29 @@ const AuthForm = () => {
 
   const handleLogin = () => {
     if (inputValue) {
-      login(inputValue);
+      setUser(inputValue);
       setInputValue('');
     }
   };
 
   const handleLogout = () => {
     setInputValue('');
-    logout();
+    setUser(false);
   };
 
   return (
     <div className="header-section">
-      <HTag text={userName ? userName : 'Вход'} />
+      <HTag text={userName ?? 'Вход'} />
       <Paragraph></Paragraph>
       <InputBox
+        name="login"
+        ref={inputRefs}
         value={inputValue}
         onChange={inputOnChange}
+        hideInput={!!userName}
         buttonText={userName ? 'Выйти' : 'Войти в профиль'}
         onClick={userName ? handleLogout : handleLogin}
         placeholder="Ваше имя"
-        ref={inputRefs}
-        hideInput={userName ? true : false}
       />
     </div>
   );

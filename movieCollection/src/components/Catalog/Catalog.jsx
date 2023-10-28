@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 import { INITIAL_STATE, catalogReducer } from '../../store/catalogReducer';
-import CalalogList from './CalalogList/CalalogList';
+import CalalogList from './CalalogList/';
 
 const Catalog = () => {
   //eslint-disable-next-line

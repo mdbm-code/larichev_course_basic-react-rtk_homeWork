@@ -1,7 +1,7 @@
-import AppBar from './components/AppBar/AppBar';
-import SearchForm from './components/SearchForm/SearchForm';
-import Catalog from './components/Catalog';
-import AuthForm from './components/AuthForm/AuthForm';
+import AppBar from './components/AppBar/';
+import SearchForm from './components/SearchForm/';
+import Catalog from './components/Catalog/';
+import AuthForm from './components/AuthForm/';
 
 const App = () => {
   return (
