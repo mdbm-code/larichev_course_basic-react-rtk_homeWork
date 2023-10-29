@@ -1,7 +1,7 @@
-import './HTag.css';
+import styles from './HTag.module.css';
 
 const HTag = ({ text }) => {
-  return <h1 className="ui-header">{text}</h1>;
+  return <h1 className={styles['ui-header']}>{text}</h1>;
 };
 
 export default HTag;

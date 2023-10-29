@@ -1,4 +1,4 @@
-import './Badge.css';
+import styles from './Badge.module.css';
 
 const Badge = ({ value }) => {
   return (
@@ -12,7 +12,7 @@ const Badge = ({ value }) => {
       >
         <circle cx="12" cy="12" r="12" fill="#7B6EF6" />
         <text
-          className="badge-text"
+          className={styles['badge-text']}
           x="50%"
           y="50%"
           textAnchor="middle"

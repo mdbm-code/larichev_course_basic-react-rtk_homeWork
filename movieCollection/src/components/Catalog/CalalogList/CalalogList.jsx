@@ -1,5 +1,5 @@
-import CatalogItem from '../CatalogItem/CatalogItem';
-import './CalalogList.css';
+import CatalogItem from '../CatalogItem/';
+import styles from './CalalogList.module.css';
 
 const CalalogList = ({ data, toggleFavorite }) => {
   if (!data) {
@@ -7,7 +7,7 @@ const CalalogList = ({ data, toggleFavorite }) => {
   }
 
   return (
-    <div className="catalog-list">
+    <div className={styles['catalog-list']}>
       {data.map((item) => (
         <CatalogItem
           key={item.id}
